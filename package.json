@@ -1,0 +1,33 @@
+{
+  "name": "rental-car-node",
+  "version": "1.0.0",
+  "description": "RentalCar Restful CRUD API whit Node.js,Express and MySQL ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "rest",
+    "api",
+    "sequelize"
+  ],
+  "author": "Francesco",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.10",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}
