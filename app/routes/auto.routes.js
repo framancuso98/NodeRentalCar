@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const  Auto = require("../controllers/auto.controller.js");
+
 module.exports = router => {
 
 

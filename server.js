@@ -1,11 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
-const controller = require("./app/controllers/utente.controller");
-
-const router = require("./app/routes/auto.routes")
 
 const app = express();
+
+app.use(cors());
+
+
+
+
+
+/*var corsOptions = {
+    origin: "htttp://localhost:4200"
+};*/
 
 app.use(bodyParser.json());
 
@@ -23,7 +31,13 @@ app.get("/",(req, res) => {
 require("./app/routes/utente.routes")(app);
 require("./app/routes/auto.routes")(app);
 require("./app/routes/prenotazione.router")(app);
+require("./app/routes/auth.routes")(app);
 
-app.listen(3000, () => {
+/*app.listen(3000, () => {
     console.log("Il server è attivo sulla porta 3000");
+});*/
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Il server è attivo sulla porta ${PORT}`);
 });

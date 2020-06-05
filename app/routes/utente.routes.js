@@ -1,12 +1,11 @@
-const router = require("express").Router();
+//const router = require("express").Router();
+const authJwt = require("../auth/authJwt");
 const  Utente = require("../controllers/utente.controller.js");
 module.exports = router => {
 
 
-
-
-
-    router.get("/utente/all",Utente.findAll);
+    router.get("/utente/all",
+        Utente.findAll);
 
     router.post("/utente/inserisci", Utente.create);
 

@@ -1,4 +1,5 @@
 
+
 module.exports = (sequelize, type) => {
     const Prenotazione = sequelize.define("prenotazione", {
         id: {
@@ -8,7 +9,8 @@ module.exports = (sequelize, type) => {
         },
         stato: {
             type: type.STRING
-        }
+        },
+
     });
 
     return Prenotazione;

@@ -2,6 +2,7 @@
 const db = require("../models");
 const Utente = db.utente;
 const Op = db.Sequelize.Op;
+var bcrypt = require("bcryptjs");
 
 exports.findAll = (req, res) => {
     Utente.findAll().then(
@@ -26,7 +27,7 @@ exports.create = (req, res) => {
 
     const utente = {
         username: req.body.username,
-        password: req.body.password,
+        password:  bcrypt.hashSync(req.body.password, 8),
         nome: req.body.nome,
         cognome: req.body.cognome,
         data_nascita: req.body.data_nascita,

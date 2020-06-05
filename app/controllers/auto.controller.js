@@ -29,6 +29,7 @@ exports.create = (req, res) => {
         modello: req.body.modello,
         targa: req.body.targa,
         anno: req.body.anno,
+        categoriumId: req.body.categoriumId,
     }
 
     Auto.create(auto)

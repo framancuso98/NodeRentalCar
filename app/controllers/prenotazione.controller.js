@@ -1,10 +1,21 @@
 const db = require("../models");
 const Prenotazione = db.prenotazione;
 const Op = db.Sequelize.Op;
+const Utente = db.utente;
+const Auto = db.auto;
 
 exports.findAll = (req, res) => {
     console.log("ciao")
-    Prenotazione.findAll().then(
+    Prenotazione.findAll({
+        include:[{
+            model: Utente,
+            attributes: ['id', 'username', 'nome', 'cognome', 'data_nascita']
+        },{
+            model: Auto,
+            attributes: ['id', 'costruttore', 'modello', 'targa', 'anno']
+        }],
+
+    }).then(
         data => {
             res.send(data)
         })
